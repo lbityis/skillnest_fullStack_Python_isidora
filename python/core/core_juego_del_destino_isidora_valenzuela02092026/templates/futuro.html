@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destino Revelado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bg-dark text-white">
+
+    <div class="box d-flex align-items-center justify-content-center py-5">
+        <div class="card card-m shadow-lg w-100">
+
+            <div class="head text-center text-white py-4 px-3">
+                <div class="ico-s mx-auto mb-2"><i class="bi bi-sun-fill"></i></div>
+                <h3 class="fw-bold mb-1">Tu Destino ha sido Revelado</h3>
+                <p class="small text-white-50 m-0">Las estrellas han hablado, {{ session.get('nom') }}</p>
+            </div>
+
+            <div class="card-body p-4 bg-white text-dark">
+
+                <!-- Banner corto -->
+                <div
+                    class="alert {% if session['prd']['ok'] %}alt-ok{% else %}alt-err{% endif %} p-3 mb-4 rounded-3 d-flex align-items-center gap-3">
+                    <i class="bi {{ session['prd']['ico'] }} fs-3"></i>
+                    <p class="m-0 small fw-medium">{{ session['prd']['txt'] }}</p>
+                </div>
+
+                <!-- Fichas -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <div class="p-3 bg-light rounded-3 h-100">
+                            <small class="fw-bold txt-m d-flex align-items-center gap-1 mb-2">
+                                <i class="bi bi-palette-fill"></i> Tu Color
+                            </small>
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <span class="dot" style="background-color: {{ session.get('col') }};"></span>
+                            </div>
+                            <p class="sub text-muted m-0">
+                                Tu preferencia por el color <strong>{{ session.get('col') }}</strong> revela tu afinidad
+                                con el <strong>misterio y descubrimiento</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="p-3 bg-light rounded-3 h-100">
+                            <small class="fw-bold txt-m d-flex align-items-center gap-1 mb-2">
+                                <i class="bi bi-balloon-heart-fill"></i> Tu Animal
+                            </small>
+                            <p class="sub text-muted m-0 pt-2">
+                                Tu conexión con el <strong>{{ session.get('ani') }}</strong> simboliza tu naturaleza de
+                                <strong>independencia y misterio</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Número de la suerte -->
+                <div class="text-center mb-4">
+                    <h6 class="fw-bold txt-m mb-2">Tu número de la suerte</h6>
+                    <div class="c-num mx-auto mb-2">{{ session.get('num') }}</div>
+                    <p class="sub text-muted m-0">Este número te acompañará en momentos importantes.</p>
+                </div>
+
+                <!-- Edad -->
+                <div class="p-3 bg-light rounded-3 brd-m mb-4">
+                    <p class="sub text-muted m-0">
+                        A tus <strong>{{ session.get('eda') }} años</strong>, estás en un momento favorable para
+                        aprovechar nuevas oportunidades.
+                    </p>
+                </div>
+
+                <a href="/" class="btn btn-m w-100 py-2 fw-bold text-white shadow-sm">
+                    <i class="bi bi-arrow-counterclockwise"></i> Consultar de nuevo
+                </a>
+
+                <div class="text-center mt-3">
+                    <span class="sub text-muted">Las estrellas te han hablado hoy: {{ session.get('nom') }}.</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

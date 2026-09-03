@@ -1,0 +1,105 @@
+body {
+    background-color: #0b0c1b;
+    background-image: radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40%);
+    background-size: 250px 250px;
+    font-family: system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+.card-m {
+    max-width: 480px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.head {
+    background: linear-gradient(180deg, #231d3f, #17132a);
+}
+
+.ico,
+.ico-s {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.ico {
+    background-color: #6f42c1;
+    color: #fff;
+}
+
+.ico-s {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.ball {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #a29bfe, #6c5ce7);
+}
+
+.btn-m {
+    background: linear-gradient(135deg, #7928ca, #4a00e0);
+    border: none;
+    border-radius: 10px;
+}
+
+.txt-m {
+    color: #6f42c1;
+}
+
+.brd-m {
+    border-left: 4px solid #6f42c1;
+}
+
+.dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+
+.c-num {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #6f42c1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alt-ok {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.alt-err {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.sub {
+    font-size: 0.8rem;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
